@@ -9,8 +9,8 @@
       <div v-for="(article,index) in articles" :key="index">
           <ul class="group-list">
         <li class="group-list-item">
-          {{ article.price }}
-          {{ article.name }} <button @click="deleteArticle(article.id)" class="btn btn-danger">Delete</button>
+          {{ article.name }}
+          {{ article.price }} <button @click="deleteArticle(article.id)" class="btn btn-danger">Delete</button> <button @click="editArticle()" class="btn btn-warning">Edit</button>
         </li>
           </ul>
       </div>
@@ -61,6 +61,10 @@ export default {
 
     deleteArticle(id){
       articlesService.removeById(id)
+    },
+
+    editArticle(){
+      
     }
   },
 
